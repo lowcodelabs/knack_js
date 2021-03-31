@@ -1,3 +1,9 @@
+LazyLoad.js(['https://dl.dropbox.com/s/vj6guwl2a8b0wze/notiflix-aio-1.9.1.min.js?',
+             'https://dl.dropboxusercontent.com/s/d0bepdjq0bonnqj/notiflix-aio-1.9.1.js',
+             'https://dl.dropboxusercontent.com/s/bwanjv361aifmls/papaparse.min.js',
+             'https://dl.dropboxusercontent.com/s/2onm4emhos577sf/papaparse.js'],function () {
+});
+
 function createMap() {
   LazyLoad.js(['https://maps.googleapis.com/maps/api/js?key=AIzaSyBgREXIGcss-ug9KmqlJMuAQg9Ka016I8Y','https://cdn.sobekrepository.org/includes/gmaps-markerwithlabel/1.9.1/gmaps-markerwithlabel-1.9.1.min.js'], function () {  
     var mapClass = $('.my-google-map');
@@ -105,7 +111,7 @@ function createMap() {
                   loopreferences(payload[i].references)+'</div>';
               infowindow.setContent(contentString);
               infowindow.open(map, newMarker);
-            }
+            };
           })(newMarker, i));
           markers.push(newMarker);
         }
@@ -113,4 +119,4 @@ function createMap() {
       initialize();
     }
   });
-};
+}
