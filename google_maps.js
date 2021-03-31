@@ -1,8 +1,5 @@
-LazyLoad.js(['https://maps.googleapis.com/maps/api/js?key=AIzaSyBgREXIGcss-ug9KmqlJMuAQg9Ka016I8Y',
-             'https://cdn.sobekrepository.org/includes/gmaps-markerwithlabel/1.9.1/gmaps-markerwithlabel-1.9.1.min.js'],function () {
-});
-
-function createMap() {  
+var createMap = function(view) {
+  LazyLoad.js(['https://maps.googleapis.com/maps/api/js?key=AIzaSyBgREXIGcss-ug9KmqlJMuAQg9Ka016I8Y','https://cdn.sobekrepository.org/includes/gmaps-markerwithlabel/1.9.1/gmaps-markerwithlabel-1.9.1.min.js'], function () {   
     var mapClass = $('.my-google-map');
     for (var mi = 0; mi < mapClass.length; mi++) {
       var d_json = mapClass[mi].innerText;
@@ -115,4 +112,5 @@ function createMap() {
       }
       initialize();
     }
+  });
 }
